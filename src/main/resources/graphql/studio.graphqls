@@ -1,0 +1,13 @@
+type Studio {
+	id: ID!
+	name: String!
+	movies: [Movie]
+}
+
+type Query {
+	findAllStudios: [Studio]
+}
+
+type Mutation {
+	addStudio(id: ID!, name: String!): Studio!
+}

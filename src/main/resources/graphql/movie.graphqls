@@ -1,0 +1,19 @@
+type Movie {
+	id: ID!
+	title: String!
+	studio: Studio
+}
+
+input StudioInput {
+	id: ID!
+	name: String!
+}
+
+extend type Query {
+	findAllMovies: [Movie]
+	getMoviesOfStudio(studio: StudioInput!): [Movie]
+}
+
+extend type Mutation {
+	addMovie(id: ID!, title: String!, studio: StudioInput): Movie!
+}
